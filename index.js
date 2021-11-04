@@ -5,7 +5,14 @@ var app = new Vue({
   data: function () {
     return {
       message: "Hello from JavaScript!",
+      name: "Daeve",
+      showInfo: false,
     };
+  },
+  methods: {
+    changeMessage: function () {
+      this.message = "Hello";
+    },
   },
 });
 
@@ -64,6 +71,13 @@ var app7 = new Vue({
 var app8 = new Vue({
   el: "#app-8",
   data: {
-    message: "Write here!",
+    message: "Hello Vue!",
+  },
+});
+
+var app9 = new Vue({
+  el: "#app-9",
+  data: {
+    message: "Hello Vue!",
   },
 });
