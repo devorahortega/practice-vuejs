@@ -9,11 +9,15 @@ var app = new Vue({
       number2: 0,
       number3: 0,
       sum: 0,
+      remainder: 0,
     };
   },
   methods: {
     calculateSum: function () {
       this.sum = parseInt(this.number1) + parseInt(this.number2) + parseInt(this.number3);
+    },
+    calculateRemainder: function () {
+      this.remainder = parseInt(this.number1) - parseInt(this.number2) - parseInt(this.number3);
     },
   },
 });
