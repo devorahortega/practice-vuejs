@@ -6,14 +6,22 @@ var app = new Vue({
     return {
       message: "This is the message!",
       todos: [],
+      title: "" 
     };
   },
+  created: function () {
+    axios.get("https://jsonplaceholder.typicode.com/todos").then((response) => {
+      console.log(response.data);
+      this.todos = response.data;
+    });
+  },
   methods: {
-    // ...
-    loadTodos: function () {
-      axios.get("https://jsonplaceholder.typicode.com/todos").then((response) => {
+    createTodo: function () {
+      var params = { userId: 1, title: this.title, completed: false};
+      axios.post("https://jsonplaceholder.typicode.com/todos", params).then(response) => {
         console.log(response.data);
-        this.todos = response.data;
+        this.todos.push(response.data);
+        this.title = ""
       });
     },
   },
