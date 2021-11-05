@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="todos.js" defer></script>
     <title>Todos vue.js</title>
   </head>
@@ -10,7 +11,11 @@
     <h1>Hello from HTML!!</h1>
     <div id="app">
       <div>{{ message }}</div>
+      <button v-on:click="loadTodos()">Load Todos!</button>
       <div>{{ todos }}</div>
+      <div v-for="todo in todos">
+        <p>{{ todo }}</p>
+      </div>
     </div>
   </body>
 </html>
