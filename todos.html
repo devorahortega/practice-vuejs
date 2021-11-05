@@ -8,14 +8,13 @@
     <title>Todos vue.js</title>
   </head>
   <body>
-    <h1>Hello from HTML!!</h1>
+    <h1>This is my Todo List:</h1>
     <div id="app">
       <div>{{ message }}</div>
       <button v-on:click="loadTodos()">Load Todos!</button>
-      <div>{{ todos }}</div>
-      <div v-for="todo in todos">
-        <p>{{ todo }}</p>
-      </div>
+      <ol>
+        <li v-for="todo in todos">{{ todo.title }}</li>
+      </ol>
     </div>
   </body>
 </html>
